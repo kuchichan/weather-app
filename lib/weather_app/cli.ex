@@ -24,6 +24,7 @@ defmodule WeatherApp.CLI do
     |> args_to_internal_representation()
   end
 
+
   def args_to_internal_representation([location]) do
     location
   end
@@ -31,6 +32,6 @@ defmodule WeatherApp.CLI do
   def args_to_internal_representation(_), do: :help
 
   def process(:help) do
-    IO.puts("usage: weather: <location>") 
+    IO.puts("usage: weather: <location>")
   end
 end

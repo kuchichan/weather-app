@@ -1,6 +1,6 @@
 defmodule WeatherApp do
   @moduledoc """
-  Documentation for `Issues`.
+  Documentation for `WeatherApp`.
   """
 
   @doc """
@@ -8,7 +8,7 @@ defmodule WeatherApp do
 
   ## Examples
 
-      iex> Issues.hello()
+      iex> WeatherApp.hello()
       :world
 
   """
