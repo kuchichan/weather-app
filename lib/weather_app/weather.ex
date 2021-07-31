@@ -46,6 +46,12 @@ defmodule WeatherApp.Weather do
 
   def text([]), do: nil
 
+  def get_text_from_element(body, name) do
+    body
+    |> by_xpath("//#{name}")
+    |> text()
+  end
+
   def handle_error(200), do: :ok
   def handle_error(_), do: :error
 end
