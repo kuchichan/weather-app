@@ -4,6 +4,9 @@ defmodule WeatherApp.MixProject do
   def project do
     [
       app: :weather_app,
+      name: "Weather-App",
+      source_url: "https://github.com/kuchichan/weather-app",
+      escript: escript_config(),
       version: "0.1.0",
       elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
@@ -23,7 +26,15 @@ defmodule WeatherApp.MixProject do
     [
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
-      {:httpoison, "~> 0.13.0"}
+      {:httpoison, "~> 0.13.0"},
+      { :ex_doc, "~> 0.19.0"},
+      { :earmark, "~> 1.2.4"},
+    ]
+  end
+
+  defp escript_config() do
+    [
+      main_module: WeatherApp.CLI
     ]
   end
 end
