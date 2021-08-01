@@ -11,6 +11,7 @@ defmodule WeatherApp.Weather do
     location
     |> weather_fetch_url()
     |> HTTPoison.get()
+    |> handle_response()
   end
 
   def handle_response({:ok, %{status_code: status_code, body: body}}) do
@@ -52,6 +53,6 @@ defmodule WeatherApp.Weather do
     |> text()
   end
 
-  def handle_error(200), do: :ok
-  def handle_error(_), do: :error
+  defp handle_error(200), do: :ok
+  defp handle_error(_), do: :error
 end
